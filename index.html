@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>LOGIN PAGE</title>
+  
+  <div class="header">
+   <img src ="logo.png"> 
+    <div class="header-right">
+      <a href="#home"><u><b>HOME</b></u></a>
+      <a href="#Login"><u><b>LOGIN</b></u></a>
+      <a href="#About"><u><b>ABOUT</b></u></a>
+    </div>
+  </div>
+    <link rel="stylesheet" href="style.css">
+ </head>
+  
+  <body>
+    <div class="login-box">
+        <h1>Sign In</h1>
+    <div class="textbox">
+      <i class="fas fa-user"></i>
+      <input type="text" placeholder="Email Address" name="email" id="email"></input>
+    </div>
+
+    <div class="textbox">
+      <i class="fas fa-lock"></i>
+      <input type="password" placeholder="Enter Password" name="pass" id="pass">
+    </div>
+      <button type="submit"onClick="login()">Sign In</button>
+    <div class="w3-row">
+    <div class="w3-half w3-container w3-border">
+      <span class="create1"><a href="#CreateAccount">Create Account</a></span>
+    </div>
+    <div class="w3-half w3-container w3-border">
+      <span class="pass"><a href="#ForgetPassword">Forgot Password</a></span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<script>
+  function login()
+  {
+    var myname = document.getElementById("email").value;
+    var pass = document.getElementById("pass").value;
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if(myname =='')
+    {
+      alert("please enter your email address.");
+      return false;
+    }
+    else if(!filter.test(myname))
+    {
+      alert("Please enter valid email address");
+      return false;
+    }
+    else if(pass=='')
+    {
+      alert("Enter your password");
+      return false;
+    }
+    else if(pass.length < 16)
+    {
+      alert("Password length should be 16.");
+      return false;
+    }
+    else
+    {
+      alert('Welcome to the website');
+    }
+  }
+  </script>
+  </body>
+</html>
